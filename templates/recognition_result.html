@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Recognition Results</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .result {
+            margin-bottom: 10px;
+        }
+
+        .match {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .unknown {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recognition Results</h1>
+    {% for result in results %}
+    <p class="result {% if 'Unknown' in result %}unknown{% else %}match{% endif %}">{{ result }}</p>
+    {% endfor %}
+</body>
+</html>
